@@ -1,150 +1,85 @@
-# 🏠 House Prices: Advanced Regression Techniques
+# House Prices — Advanced Regression Techniques
 
-This repository contains a complete solution for the Kaggle competition
-**"House Prices: Advanced Regression Techniques"**.\
-The goal is to predict the final sale price of residential homes in
-Ames, Iowa using advanced regression and feature engineering techniques.
+This repository contains my work for the Kaggle competition "House Prices: Advanced Regression Techniques" (https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques). It includes data, multiple Jupyter notebooks exploring different modelling approaches, and final submission files.
 
-This repository includes: - The **full solution notebook** - The **four
-original competition files** - The **final submission file**
+## Repository structure
 
-------------------------------------------------------------------------
+- House_Prices_Advanced_Regression_Techniques.ipynb — Main exploratory analysis and baseline modelling.
+- House_Prices_Advanced_Regression_Techniques_Advanced_techniques_used.ipynb — Advanced feature engineering and modelling experiments.
+- House_Prices_Advanced_Regression_Techniques_with_catboost.ipynb — CatBoost-based modelling pipeline and final CatBoost experiments.
+- train.csv, test.csv — Original competition data.
+- data_description.txt — Data dictionary from the competition.
+- sample_submission.csv — Sample submission file provided by Kaggle.
+- submission*.csv, submission_catboost_*.csv — Final and intermediate submission files produced during the experiment.
+- LICENSE — Repository license.
 
-## 📂 Repository Contents
+## Competition
 
-  ------------------------------------------------------------------------------------------------------
-  File                                                  Description
-  ----------------------------------------------------- ------------------------------------------------
-  `House_Prices_Advanced_Regression_Techniques.ipynb`   Complete solution notebook
+Kaggle competition page: https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques
 
-  `train.csv`                                           Training dataset
+This competition's goal is to predict house sale prices (SalePrice) using tabular features describing residential homes in Ames, Iowa.
 
-  `test.csv`                                            Test dataset
+## Results (current)
 
-  `sample_submission.csv`                               Submission format
+- Kaggle username: Herath Mudiyanselage Kalana Lakshan
+- Public leaderboard rank today: 675
+- Best public score: 0.12257 (Your Best Entry!)
+- Most recent submission score: 0.12353
 
-  `data_description.txt`                                Official dataset description
+Note: scores are Root Mean Squared Logarithmic Error (RMSLE) as used in the competition.
 
-  `submission.csv`                                      Final generated predictions
+## Notebooks and approach
 
-  `README.md`                                           Project documentation
-  ------------------------------------------------------------------------------------------------------
+I organized the work into multiple notebooks:
 
-------------------------------------------------------------------------
+- Exploratory Data Analysis (EDA): data quality checks, missing value handling, initial feature understanding and visualization.
+- Baseline models: simple pipelines using linear regression, ridge, lasso and tree-based models to establish a baseline.
+- Feature engineering: transformation of skewed features, creation of new features, encoding categorical variables, and sophisticated imputation strategies.
+- Advanced models and ensembling: gradient boosting (XGBoost/LightGBM/CatBoost), stacking/ensembling techniques and hyperparameter tuning.
 
-## 📌 Problem Description
+The CatBoost notebook contains a production-friendly pipeline and produced the best submissions in this repository.
 
-Predict the **final SalePrice** of houses using **79 explanatory
-variables** describing almost every aspect of residential homes,
-including: - Lot size - Neighborhood - Building quality - Year built /
-remodeled - Basement and garage details - Interior features
+## Reproduce results / Usage
 
-Target column: - `SalePrice` --- Final selling price of the house (USD)
+1. Clone the repository:
 
-------------------------------------------------------------------------
+   git clone https://github.com/Kalana-Lakshan/Kaggle_Competitions_House-Prices---Advanced-Regression-Techniques.git
 
-## 🎯 Objective
+2. Install dependencies (recommended to use a virtual environment or conda):
 
-Build a regression model that: - Learns from the training dataset -
-Predicts sale prices for unseen data - Minimizes **Root Mean Squared
-Error (RMSE)**
+   pip install -r requirements.txt
 
-------------------------------------------------------------------------
+   If a requirements file is not present, common packages used are:
+   - numpy
+   - pandas
+   - scikit-learn
+   - matplotlib
+   - seaborn
+   - xgboost
+   - lightgbm
+   - catboost
+   - jupyter
 
-## 🧠 Evaluation Metric
+3. Place the original competition data files (train.csv, test.csv) in the repository root (already included here).
 
-The competition uses **Root Mean Squared Error (RMSE)** on logarithmic
-values:
+4. Open and run the notebooks in the order you prefer. The CatBoost notebook contains a single pipeline to generate a submission CSV.
 
-RMSE = sqrt( (1/n) \* Σ ( log(y) − log(y_hat) )² )
+Notes:
+- For long-running hyperparameter tuning, consider running on a machine with more CPU/RAM or on Kaggle/Colab with GPU support if using libraries that can leverage it.
+- Random seeds are set in notebooks for reproducibility; nonetheless results may vary slightly across environments.
 
-Lower RMSE indicates better performance.
+## Files of interest
 
-------------------------------------------------------------------------
+- submission_catboost_final.csv — Final CatBoost submission.
+- submission_catboost_optimized.csv — Submission produced after hyperparameter tuning.
+- submission*.csv — Additional candidate submissions stored for record.
 
-## 🔧 Solution Workflow
+## License
 
-1.  **Exploratory Data Analysis (EDA)**
-    -   Study feature distributions
-    -   Identify missing values and outliers
-    -   Analyze correlations
-2.  **Data Cleaning**
-    -   Handle missing values
-    -   Fix incorrect data types
-    -   Treat outliers
-3.  **Feature Engineering**
-    -   Encoding categorical features
-    -   Log-transform skewed numerical features
-    -   Create new derived features
-4.  **Model Training**
-    -   Baseline Linear Regression
-    -   Regularized models (Ridge, Lasso)
-    -   Random Forest / Gradient Boosting
-5.  **Model Evaluation**
-    -   Cross-validation
-    -   RMSE scoring
-6.  **Prediction & Submission**
-    -   Generate predictions for test data
-    -   Create `submission.csv`
-    -   Upload to Kaggle leaderboard
+This project is licensed under the terms in the LICENSE file in the repository root.
 
-------------------------------------------------------------------------
+## Contact
 
-## 🛠️ Technologies Used
+Herath Mudiyanselage Kalana Lakshan — GitHub: @Kalana-Lakshan
 
--   Python 3
--   NumPy
--   Pandas
--   Matplotlib
--   Scikit-learn
--   Jupyter Notebook
-
-------------------------------------------------------------------------
-
-## ▶️ How to Run
-
-1.  Open the notebook:
-
-        House_Prices_Advanced_Regression_Techniques.ipynb
-
-2.  Make sure the following files are in the same directory:
-
-    -   `train.csv`
-    -   `test.csv`
-    -   `sample_submission.csv`
-    -   `data_description.txt`
-
-3.  Run all cells in order.
-
-4.  The final submission file will be generated as:
-
-        submission.csv
-
-------------------------------------------------------------------------
-
-## 📈 Output Format
-
-The output CSV is in the format:
-
-Id,SalePrice\
-1461,169000\
-1462,187500\
-...
-
-------------------------------------------------------------------------
-
-## 🏆 Competition Link
-
-https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques
-
-------------------------------------------------------------------------
-
-## ✍️ Author
-
-Created for educational and machine learning practice purposes.
-
-------------------------------------------------------------------------
-
-## 📄 License
-
-This project is intended strictly for learning and academic use.
+If you want to reproduce specific experiments or need help running the notebooks, open an issue or contact me directly.
