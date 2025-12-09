@@ -22,7 +22,7 @@ This competition's goal is to predict house sale prices (SalePrice) using tabula
 ## Results (current)
 
 - Kaggle username: Herath Mudiyanselage Kalana Lakshan
-- Public leaderboard rank today: 675
+- Public leaderboard rank by 2025/09/12: 675
 - Best public score: 0.12257 (Your Best Entry!)
 - Most recent submission score: 0.12353
 
